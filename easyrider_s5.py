@@ -101,26 +101,19 @@ def check_hours(jdata_dict, bus_lines, bus_lines_past):
             
         if bus_lines[str(lines['bus_id'])] <= bus_lines_past[str(lines['bus_id'])]:
             checker += 1
-            #bus_checked = dict(bus_checked_aux)
+
             if lines['bus_id'] in bus_checked_list:
                 pass
             else:
                 bus_checked_list.append(lines['bus_id'])
                 bus_checked[str(lines['bus_id'])] = lines['stop_name']
             
-            #if bus_checked[str(lines['bus_id'])] != bus_lines[str(lines['bus_id'])] or bus_checked[str(lines['bus_id'])] is False:
-            #    bus_checked[str(lines['bus_id'])] = lines['stop_name']
-            #print(bus_checked_list)
-            #print(bus_checked)
-            
     for keys, values in bus_checked.items():
         print(f"bus_id line {keys}: wrong time on station {values}")
-            #print(f"bus_id line {lines['bus_id']}: wrong time on station {lines['stop_name']}")
-            #print(bus_checked)
+
 
     if checker == 0:
         print('OK')
-        #print(bus_lines)
 
 # Data imported from input
 # jdata_end = json.loads(input())
